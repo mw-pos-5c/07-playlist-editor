@@ -1,0 +1,10 @@
+
+.container {
+  background: lightgreen;
+  padding: 5px;
+
+  &>* {
+    display: inline;
+    margin: 0 10px;
+  }
+}

@@ -1,19 +1,19 @@
 <div class="container">
   <div>
     <span>Genre: </span>
-    <select [(ngModel)]="selectedGenre" (ngModelChange)="selectedGenreChanged()">
-      <option value="-1" disabled>Select Genre</option>
+    <select (ngModelChange)="selectedGenreChanged()" [(ngModel)]="selectedGenre">
+      <option disabled value="-1">Select Genre</option>
       <option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</option>
     </select>
   </div>
   <div>
     <span>Track: </span>
-    <select [(ngModel)]="selectedTrack" (ngModelChange)="selectedTrackChanged()" [disabled]="tracks.length == 0">
-      <option value="-1" disabled>Select Track</option>
+    <select (ngModelChange)="selectedTrackChanged()" [(ngModel)]="selectedTrack" [disabled]="tracks.length == 0">
+      <option disabled value="-1">Select Track</option>
       <option *ngFor="let track of tracks" [value]="track.id">{{track.name}}</option>
     </select>
   </div>
-  <button [disabled]="selectedTrack === '-1'" (click)="addTrack()">Add</button>
+  <button (click)="addTrack()" [disabled]="selectedTrack === '-1'">Add</button>
 </div>
 
 

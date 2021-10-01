@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import Playlist from "../models/playlist";
 import {Observable} from "rxjs";
@@ -12,7 +12,8 @@ export class DataProviderService {
 
   backendUrl: string = 'http://localhost:8000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
 
   public getPlaylists(): Observable<Playlist[]> {
@@ -20,11 +21,11 @@ export class DataProviderService {
   }
 
   public getPlaylistTracks(id: string): Observable<Track[]> {
-    return this.http.get<Track[]>(this.backendUrl + '/api/playlisttracks/'+id);
+    return this.http.get<Track[]>(this.backendUrl + '/api/playlisttracks/' + id);
   }
 
   public getGenreTracks(id: string): Observable<Track[]> {
-    return this.http.get<Track[]>(this.backendUrl + '/api/tracks?genreid='+id);
+    return this.http.get<Track[]>(this.backendUrl + '/api/tracks?genreid=' + id);
   }
 
   public getGenres(): Observable<Genre[]> {

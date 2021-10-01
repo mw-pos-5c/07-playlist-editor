@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import Playlist from "../../models/playlist";
-import {DataProviderService} from "../../services/data-provider.service";
-import Track from "../../models/track";
+import {Component, OnInit} from '@angular/core';
+import Playlist from '../../models/playlist';
+import {DataProviderService} from '../../services/data-provider.service';
+import Track from '../../models/track';
 
 @Component({
   selector: 'app-playlist-editor',
@@ -18,7 +18,8 @@ export class PlaylistEditorComponent implements OnInit {
   playlists: Playlist[] = [];
   tracks: Track[] = [];
 
-  constructor(public dataProvider: DataProviderService) { }
+  constructor(public dataProvider: DataProviderService) {
+  }
 
   ngOnInit(): void {
 
@@ -48,11 +49,8 @@ export class PlaylistEditorComponent implements OnInit {
 
   addTrackSelected(id: string): void {
 
-    console.log(id);
-    if(this.selectedPlaylist  === '-1') return;
-
+    if (this.selectedPlaylist === '-1') return;
     this.showAddTrack = false;
-
     this.dataProvider.addTrackToPlaylist(this.selectedPlaylist, id).subscribe(value => {
       this.loadTracks();
     })

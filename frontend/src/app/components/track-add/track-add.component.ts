@@ -1,7 +1,7 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import Genre from "../../models/genre";
-import {DataProviderService} from "../../services/data-provider.service";
-import Track from "../../models/track";
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import Genre from '../../models/genre';
+import {DataProviderService} from '../../services/data-provider.service';
+import Track from '../../models/track';
 
 @Component({
   selector: 'app-track-add',
@@ -19,8 +19,8 @@ export class TrackAddComponent implements OnInit {
   tracks: Track[] = [];
 
 
-  constructor(private dataProvider: DataProviderService) { }
-
+  constructor(private dataProvider: DataProviderService) {
+  }
 
 
   ngOnInit(): void {

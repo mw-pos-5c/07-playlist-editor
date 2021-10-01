@@ -1,8 +1,8 @@
 import fs from 'fs';
-import Playlist from "./models/Playlist";
-import PlaylistTrack from "./models/playlistTrack";
-import Genre from "./models/Genre";
-import Track from "./models/track";
+import Playlist from './models/Playlist';
+import PlaylistTrack from './models/PlaylistTrack';
+import Genre from './models/Genre';
+import Track from './models/Track';
 
 
 export default class DataStore {

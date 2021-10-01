@@ -1,22 +1,27 @@
 GET http://localhost:8000/api/playlists
 Content-Type: application/json
+
 ### Get tracks for a playlist
 GET http://localhost:8000/api/playlisttracks/5
 Content-Type: application/json
+
 ### Get available genres
 GET http://localhost:8000/api/genres
 Content-Type: application/json
+
 ### Get tracks for a certain genre
 GET http://localhost:8000/api/tracks?genreid=5
 Content-Type: application/json
+
 ### Add a new track to a playlist
 POST http://localhost:8000/api/track
 Content-Type: application/json
 
 {
-"playlistId": 5,
-"trackId": 10
+  "playlistId": 5,
+  "trackId": 10
 }
+
 ### Remove a track from a playlist
 DELETE http://localhost:8000/api/track?playlistid=5&trackid=10
 Content-Type: application/json

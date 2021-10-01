@@ -1,4 +1,4 @@
 export default interface PlaylistTrack {
-    playlistId: string;
-    trackId: string;
+  playlistId: string;
+  trackId: string;
 }

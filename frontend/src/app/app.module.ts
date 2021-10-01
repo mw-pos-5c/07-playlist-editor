@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { PlaylistEditorComponent } from './components/playlist-editor/playlist-editor.component';
+import {AppComponent} from './app.component';
+import {PlaylistEditorComponent} from './components/playlist-editor/playlist-editor.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
-import { TrackAddComponent } from './components/track-add/track-add.component';
+import {TrackAddComponent} from './components/track-add/track-add.component';
 
 @NgModule({
   declarations: [
@@ -21,4 +21,5 @@ import { TrackAddComponent } from './components/track-add/track-add.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -2,48 +2,50 @@
   <div class="header">
     <div class="header-column">
       <span>Playlist: </span>
-      <select [(ngModel)]="selectedPlaylist" (ngModelChange)="selectedPlaylistChanged()">
-        <option value="-1" disabled>Select Track</option>
-        <option *ngFor="let playlist of playlists" [value]="playlist.id" >{{playlist.name}}</option>
+      <select (ngModelChange)="selectedPlaylistChanged()" [(ngModel)]="selectedPlaylist">
+        <option disabled value="-1">Select Track</option>
+        <option *ngFor="let playlist of playlists" [value]="playlist.id">{{playlist.name}}</option>
       </select>
     </div>
     <span class="header-column">Numberof tracks: <span>{{tracks.length}}</span></span>
     <span class="header-column">Total playtime: <span>{{totalPlaytime}}</span></span>
-    <button [disabled]="selectedPlaylist === '-1'" (click)="showAddTrack = true">Add new track</button>
+    <button (click)="showAddTrack = true" [disabled]="selectedPlaylist === '-1'">Add new track</button>
   </div>
-  <app-track-add *ngIf="showAddTrack" (trackSelected)="addTrackSelected($event)"></app-track-add>
+  <app-track-add (trackSelected)="addTrackSelected($event)" *ngIf="showAddTrack"></app-track-add>
   <table>
     <thead>
-      <tr>
-        <th>
-          Track #
-        </th>
-        <th>
-          Name
-        </th>
-        <th>
-          Album
-        </th>
-        <th>
-          Genre
-        </th>
-        <th>
-          Length
-        </th>
-        <th>
+    <tr>
+      <th>
+        Track #
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Album
+      </th>
+      <th>
+        Genre
+      </th>
+      <th>
+        Length
+      </th>
+      <th>
 
-        </th>
-      </tr>
+      </th>
+    </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of tracks">
-        <td>{{row.id}}</td>
-        <td>{{row.name}}</td>
-        <td>{{row.albumId}}</td>
-        <td>{{row.genreId}}</td>
-        <td>{{dataProvider.formatDuration(+row.milliseconds)}}</td>
-        <td><button (click)="deleteTrackFromPlaylist(row.id)">Delete</button></td>
-      </tr>
+    <tr *ngFor="let row of tracks">
+      <td>{{row.id}}</td>
+      <td>{{row.name}}</td>
+      <td>{{row.albumId}}</td>
+      <td>{{row.genreId}}</td>
+      <td>{{dataProvider.formatDuration(+row.milliseconds)}}</td>
+      <td>
+        <button (click)="deleteTrackFromPlaylist(row.id)">Delete</button>
+      </td>
+    </tr>
     </tbody>
   </table>
 

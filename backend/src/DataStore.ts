@@ -42,7 +42,5 @@ export default class DataStore {
             result.push(obj);
         }
         return result;
-
     }
-
 }

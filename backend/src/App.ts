@@ -50,7 +50,6 @@ app.delete('/api/track', (req, res) => {
     res.json(true);
 });
 
-
 app.listen(8000, () => {
     console.log('Listening...')
 });

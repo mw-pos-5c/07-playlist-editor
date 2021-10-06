@@ -37,7 +37,8 @@ export class PlaylistEditorComponent implements OnInit {
     });
   }
 
-  selectedPlaylistChanged(): void {
+  selectedPlaylistChanged(id: string): void {
+    this.selectedPlaylist = id;
     this.loadTracks();
   }
 

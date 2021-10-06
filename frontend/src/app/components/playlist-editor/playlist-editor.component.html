@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-column">
       <span>Playlist: </span>
-      <select (ngModelChange)="selectedPlaylistChanged()" [(ngModel)]="selectedPlaylist">
+      <select (ngModelChange)="selectedPlaylistChanged($event)" [(ngModel)]="selectedPlaylist">
         <option disabled value="-1">Select Track</option>
         <option *ngFor="let playlist of playlists" [value]="playlist.id">{{playlist.name}}</option>
       </select>

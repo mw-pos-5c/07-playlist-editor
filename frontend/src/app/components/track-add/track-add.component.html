@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <span>Genre: </span>
-    <select (ngModelChange)="selectedGenreChanged()" [(ngModel)]="selectedGenre">
+    <select (ngModelChange)="selectedGenreChanged($event)" [(ngModel)]="selectedGenre">
       <option disabled value="-1">Select Genre</option>
       <option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</option>
     </select>
@@ -15,6 +15,3 @@
   </div>
   <button (click)="addTrack()" [disabled]="selectedTrack === '-1'">Add</button>
 </div>
-
-
-

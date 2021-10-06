@@ -29,7 +29,8 @@ export class TrackAddComponent implements OnInit {
     })
   }
 
-  selectedGenreChanged(): void {
+    selectedGenreChanged(id: string): void {
+    this.selectedGenre = id;
     this.dataProvider.getGenreTracks(this.selectedGenre).subscribe(value => {
       this.selectedTrack = '-1';
       this.tracks = value;
